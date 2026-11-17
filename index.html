@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance & Attendance Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Student Performance & Attendance Analyzer</h1>
+
+        <!-- Add Student Form -->
+        <div class="card">
+            <h2>Add New Student</h2>
+            <form id="studentForm">
+                <div class="form-grid">
+                    <input type="number" id="roll_no" placeholder="Roll Number" required>
+                    <input type="text" id="name" placeholder="Student Name" required>
+                    <input type="number" id="python" placeholder="Python Marks (0-100)" min="0" max="100" required>
+                    <input type="number" id="dbms" placeholder="DBMS Marks (0-100)" min="0" max="100" required>
+                    <input type="number" id="java" placeholder="Java Marks (0-100)" min="0" max="100" required>
+                    <input type="number" id="web" placeholder="Web Marks (0-100)" min="0" max="100" required>
+                    <input type="number" id="ai" placeholder="AI Marks (0-100)" min="0" max="100" required>
+                    <input type="number" id="classes_held" placeholder="Classes Held" required>
+                    <input type="number" id="classes_attended" placeholder="Classes Attended" required>
+                </div>
+                <button type="submit" class="btn">Add Student</button>
+            </form>
+        </div>
+
+        <!-- Dashboard Analysis Cards -->
+        <div class="stats-grid" id="statsGrid"></div>
+
+        <!-- Student Records Table -->
+        <div class="card">
+            <h2>All Student Records</h2>
+            <table id="studentsTable">
+                <thead>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Total</th>
+                        <th>Average</th>
+                        <th>Percentage</th>
+                        <th>Grade</th>
+                        <th>Attendance (%)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="card">
+            <h2>Performance Graphical Report</h2>
+            <canvas id="performanceChart"></canvas>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
